@@ -8,20 +8,16 @@
 Summary:	Class::Autouse - defer loading of one or more classes
 Summary(pl):	Class::Autouse - wstrzymanie ³adowania jednej lub wiêcej klas
 Name:		perl-Class-Autouse
-Version:	1.04
+Version:	1.12
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	7ed8ab9529ac496576c65f3e8f315ebb
+# Source0-md5:	984430ccc4ae56f31de6bf03e62cf30f
+BuildRequires:	perl-ExtUtils-AutoInstall
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-BuildRequires:	perl(Carp)
-BuildRequires:	perl(File::Spec) >= 0.82
-BuildRequires:	perl(List::Util) >= 1.11
-%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
