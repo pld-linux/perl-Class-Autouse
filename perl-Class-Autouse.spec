@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Class
 %define	pnam	Autouse
-Summary:	Class::Autouse - Defer loading of one or more classes.
-Summary(pl):	Class::Autouse - Wstrzymanie ³adowania jednej lub wiêcej klas.
+Summary:	Class::Autouse - defer loading of one or more classes
+Summary(pl):	Class::Autouse - wstrzymanie ³adowania jednej lub wiêcej klas
 Name:		perl-Class-Autouse
 Version:	1.04
 Release:	1
