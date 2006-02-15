@@ -8,14 +8,15 @@
 Summary:	Class::Autouse - defer loading of one or more classes
 Summary(pl):	Class::Autouse - wstrzymanie ³adowania jednej lub wiêcej klas
 Name:		perl-Class-Autouse
-Version:	1.17
+Version:	1.24
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	075c0d92df6ccc8628fd46ad46923fad
+# Source0-md5:	6192abd3fa36d40ae40870ea66aa9b2a
 BuildRequires:	perl-ExtUtils-AutoInstall
+BuildRequires:	perl-Scalar-List-Utils >= 1.17
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -38,7 +39,7 @@ pamiêci oraz zmniejszenie czasu ³adowania skryptu.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
+%{__perl} Makefile.PL --skipdeps \
 	INSTALLDIRS=vendor
 
 %{__make}
@@ -50,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Class/Autouse/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT
