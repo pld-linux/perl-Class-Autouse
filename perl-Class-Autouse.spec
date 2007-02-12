@@ -6,7 +6,7 @@
 %define		pdir	Class
 %define		pnam	Autouse
 Summary:	Class::Autouse - defer loading of one or more classes
-Summary(pl):	Class::Autouse - wstrzymanie ³adowania jednej lub wiêcej klas
+Summary(pl.UTF-8):   Class::Autouse - wstrzymanie Å‚adowania jednej lub wiÄ™cej klas
 Name:		perl-Class-Autouse
 Version:	1.26
 Release:	1
@@ -29,12 +29,12 @@ method of that class is called. For large classes that might not be
 used during the running of a program, such as Date::Manip, this can
 save you large amounts of memory, and decrease the script load time.
 
-%description -l pl
-Class::Autouse pozwala na wskazanie klas, które bêd± za³adowane tylko
-wtedy, gdy metoda danej klasy zostanie wywo³ana. Dla du¿ych klas,
-takich jak Date::Manip, które mog± byæ nieu¿ywane podczas dzia³ania
-programu, w ten sposób mo¿liwe jest zaoszczêdzenie du¿ej ilo¶ci
-pamiêci oraz zmniejszenie czasu ³adowania skryptu.
+%description -l pl.UTF-8
+Class::Autouse pozwala na wskazanie klas, ktÃ³re bÄ™dÄ… zaÅ‚adowane tylko
+wtedy, gdy metoda danej klasy zostanie wywoÅ‚ana. Dla duÅ¼ych klas,
+takich jak Date::Manip, ktÃ³re mogÄ… byÄ‡ nieuÅ¼ywane podczas dziaÅ‚ania
+programu, w ten sposÃ³b moÅ¼liwe jest zaoszczÄ™dzenie duÅ¼ej iloÅ›ci
+pamiÄ™ci oraz zmniejszenie czasu Å‚adowania skryptu.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
