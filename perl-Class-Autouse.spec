@@ -6,7 +6,7 @@
 %define		pdir	Class
 %define		pnam	Autouse
 Summary:	Class::Autouse - defer loading of one or more classes
-Summary(pl.UTF-8):   Class::Autouse - wstrzymanie ładowania jednej lub więcej klas
+Summary(pl.UTF-8):	Class::Autouse - wstrzymanie ładowania jednej lub więcej klas
 Name:		perl-Class-Autouse
 Version:	1.26
 Release:	1
