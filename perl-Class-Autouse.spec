@@ -8,18 +8,22 @@
 Summary:	Class::Autouse - defer loading of one or more classes
 Summary(pl.UTF-8):	Class::Autouse - wstrzymanie ładowania jednej lub więcej klas
 Name:		perl-Class-Autouse
-Version:	1.29
+Version:	2.00
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	da37cc729e01a504b93bc8bdc548d9a9
+Source0:	http://www.cpan.org/modules/by-module/Class/ADAMK/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	84fbbad122191cb046ea5d96b2d51ac3
 URL:		http://search.cpan.org/dist/Class-Autouse/
-BuildRequires:	perl-ExtUtils-AutoInstall
-BuildRequires:	perl-Scalar-List-Utils >= 1.17
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl(File::Spec) >= 0.80
+BuildRequires:	perl-File-Temp >= 0.17
+BuildRequires:	perl-Scalar-List-Utils >= 1.19
+BuildRequires:	perl-Test-Simple >= 0.47
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,15 +57,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_archlib}/perllocal.pod
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Class/Autouse/.packlist
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/Class/*.pm
+%{perl_vendorlib}/Class/Autouse.pm
 %{perl_vendorlib}/Class/Autouse
-%{_mandir}/man3/*
+%{_mandir}/man3/Class::Autouse.3pm*
