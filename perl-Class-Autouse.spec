@@ -8,7 +8,7 @@ Summary:	Class::Autouse - defer loading of one or more classes
 Summary(pl.UTF-8):	Class::Autouse - wstrzymanie ładowania jednej lub więcej klas
 Name:		perl-Class-Autouse
 Version:	2.01
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
